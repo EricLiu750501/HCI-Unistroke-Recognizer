@@ -110,7 +110,7 @@ function Result(name, score, ms) // constructor
 // DollarRecognizer constants
 //
 const NumUnistrokes = 10;
-const NumPoints = 64 // Sample 數量
+const NumPoints = 64 // Sample 數量, not used
 const SquareSize = 250.0;
 const Origin = new Point(0,0);
 const Diagonal = Math.sqrt(SquareSize * SquareSize + SquareSize * SquareSize);
@@ -213,7 +213,6 @@ function DollarRecognizer(numPoints) // constructor
 //
 // Private helper functions from here on down
 //
-var sampleRate = 50;
 function Resample(points, n)
 {
 	var I = PathLength(points) / (n - 1); // interval length

@@ -21,6 +21,9 @@
 			_r64 = new DollarRecognizer(64);
 			_r128 = new DollarRecognizer(128);
 			_r = _r16;
+				
+			console.log("init:")
+			console.log(_r);
 
 			var canvas = document.getElementById('myCanvas');
 			_g = canvas.getContext('2d');
@@ -139,13 +142,17 @@
 		function onClickAddSampleCustom() {
 			
 			customRate = document.getElementById('customRate').value
+			console.log("Trying to convert into" + customRate);
 			if (customRate == 16) {
+				_r16 = new DollarRecognizer(16);
 				_r = _r16;
 			}
 			else if (customRate == 64) {
+				_r64 = new DollarRecognizer(64);
 				_r = _r64;
 			}
 			else if (customRate == 128) {
+				_r128 = new DollarRecognizer(128);
 				_r = _r128;
 			}
 			else {
@@ -153,7 +160,7 @@
 				
 			}
 			console.log("Successfully update sampleRate:", customRate);
-			
+			console.log(_r);		
 		}
 		function onClickAddExisting()
 		{
